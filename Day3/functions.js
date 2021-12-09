@@ -59,3 +59,22 @@ function check_cookie(){
         }
     }
 }
+
+function student_record(){
+    let student = {
+        firstname : "taliha",
+        lastname : "arif",
+        fullname : function(){
+            return this.firstname + " " + this.lastname;
+        },
+        marks : [6, 7, 8, 3],
+        average_marks : function(){
+            let total_marks =0;
+            for(let mark of this.marks){
+                total_marks += mark;
+            }
+            return total_marks/this.marks.length;
+        }
+    };
+    document.write(student.fullname() + "<br/>" + student.marks + "<br/>" + student.average_marks());
+}
