@@ -21,17 +21,20 @@ function calculate_grade(){
         document.write("Not a valid value!");
     }
 }
-
+//  Some browsers don't set cookies when opening a html file locally. For example Chrome doesn't, but Firefox does. 
+//  So test cookies in Firefox if working offline.
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
+    console.log(d);
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires;
+    document.cookie = cname + "=" + cvalue + "," + expires;
+    console.log(document.cookie);
 }
 
 function getCookie(cname) {
     let name = cname + "=";
-    let ca = document.cookie.split(';');
+    let ca = document.cookie.split(',');
     console.log(ca);
     for(let i = 0; i < ca.length; i++) {
       let c = ca[i];
@@ -52,7 +55,7 @@ function check_cookie(){
     }else{
         user_name = prompt("Enter Name");
         if(user_name!="" && user_name!==null){
-            setCookie("user_name", user_name, 365);
+            setCookie("user_name", user_name, 30);
         }
     }
 }
