@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Nodejs/basics.js"
+    "start": "node Nodejs/basics.js",
+    "lint": "eslint --fix main.js",
+    "format": "prettier -w ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/talihaarif13/JS_Training/issues"
   },
-  "homepage": "https://github.com/talihaarif13/JS_Training#readme"
+  "homepage": "https://github.com/talihaarif13/JS_Training#readme",
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "prettier": "^2.5.1"
+  }
 }
